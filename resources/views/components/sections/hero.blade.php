@@ -1,54 +1,60 @@
+@props(['page'])
+
 <section class="hero text-center text-light">
-        <div class="hero-bg-seo"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-particles-container">
-            <canvas id="hero-particles" width="1552" height="543" style="width: 1552px; height: 543px;"></canvas>
-        </div>
-        <div class="container-sm cont-hero">
-            <div class="hero-inner">
-                <div class="row" style="display: flex; align-items: center;">
-                    <div class="col-lg-6">
-                        <div class="kservice-text aos-init aos-animate" data-aos="fade-up">
-                            <h2 class="kservice-text-title" style="color: #ffffff;text-align: left; font-size:40px">
-                                ARE YOU SPENDING TOO MUCH ON DIGITAL <br> <strong style="color: #f8ae0d;font-weight:900;">ADVERTISING AND
-                                    STILL NOT SEEING RESULTS?</strong>
+    <div class="hero-bg-seo" style="
+        background-image: url('{{ $page->hero_image ?? '' }}');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-particles-container">
+        <canvas id="hero-particles" width="1552" height="543" style="width: 1552px; height: 543px;"></canvas>
+    </div>
+
+    <div class="container-sm cont-hero">
+        <div class="hero-inner">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6">
+                    <div class="kservice-text" data-aos="fade-up">
+                        @if($page->hero_title)
+                            <h2 class="kservice-text-title text-left" style="color: #fff; font-size: 40px;">
+                                {!! nl2br(e($page->hero_title)) !!} <br>
+                                @if($page->hero_highlight_text)
+                                    <strong style="color: #f8ae0d; font-weight:900;">
+                                        {{ $page->hero_highlight_text }}
+                                    </strong>
+                                @endif
                             </h2>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <p style="font-size:20px;">Each Click Costs A Fortune; You Can Pay
-                                        Between
-                                        15$ And 250$ Per Click, And They Don't Even Convert Into Sales
-                                    </p>
-                                </div>
-                            </div>
+                        @endif
+
+                        @if($page->hero_subtitle)
+                            <p style="font-size: 20px;">{{ $page->hero_subtitle }}</p>
+                        @endif
+
+                        @if($page->hero_button_text && $page->hero_button_link)
                             <div class="d-flex">
-                                <a href="#free-consultation">
-                                    <button class="btn-orang" type="submit">👉 GET A FREE AUDIT</button>
+                                <a href="{{ $page->hero_button_link }}">
+                                    <button class="btn-orang" type="button">
+                                        {{ $page->hero_button_text }}
+                                    </button>
                                 </a>
                             </div>
-
-
-                        </div>
+                        @endif
                     </div>
+                </div>
 
-                    <div class="col-lg-6">
-                        <div class="mockup-container">
-                            <div class="mockup-bg">
-                                <img src="https://digitalmarketingnewjersey.us/images/hero-bg.svg" alt="iPhone illustration">
+                <div class="col-lg-6">
+                    <div class="mockup-container">
+
+                        @if($page->hero_video_url)
+                            <div class="content-video mt-4">
+                                <video class="img-banner-video" width="100%" height="100%" controls>
+                                    <source src="{{ $page->hero_video_url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
-                            <div class="content-video">
-                                <div class="mov-d">
-                                    <video class="img-banner-video mt-4" width="100%" height="100%" controls="">
-                                        <source src="https://digitalmarketingnewjersey.us/movie/digital-marketing-new-jersey-seo-agency-nj-movie-ceo--romulo-vargas-betancourt-NewJerseySEO.webm" type="video/mp4">
-                                    </video>
-                                </div>
-
-                            </div>
-                        </div>
-
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
-
-    </section>
+    </div>
+</section>

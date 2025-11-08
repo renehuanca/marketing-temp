@@ -10,10 +10,7 @@ class ServicePage extends Model
 {
     use HasSlug;
 
-    protected $fillable = [
-        'title',
-        'description',
-    ];
+    protected $guarded = [];
 
     public function getSlugOptions(): SlugOptions
     {
@@ -22,8 +19,4 @@ class ServicePage extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 }
