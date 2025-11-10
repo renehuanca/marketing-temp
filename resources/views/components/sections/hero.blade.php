@@ -26,7 +26,7 @@
                         @endif
 
                         @if($page->hero_subtitle)
-                            <p style="font-size: 20px;">{{ $page->hero_subtitle }}</p>
+                            <div style="font-size: 20px;">{!! $page->hero_subtitle !!}</div>
                         @endif
 
                         @if($page->hero_button_text && $page->hero_button_link)

@@ -23,6 +23,19 @@ class ServicePageSeeder extends Seeder
                 'hero_video_url' => 'https://digitalmarketingnewjersey.us/movie/digital-marketing-new-jersey-seo-agency-nj-movie-ceo--romulo-vargas-betancourt-NewJerseySEO.webm',
                 'hero_image' => '/storage/hero-images/hero-bg.svg',
 
+                'cards_title' => "We've experienced that pain. And that's why we chose the organic and sustainable path: SEO.",
+                'cards_subtitle' => 'There\'s another way to grow without relying on ads',
+                'cards_description' => 'At Digital Marketing New Jersey, we help you:',
+                'card1_image' => 'https://digitalmarketingnewjersey.us/images/digital-marketing-new-jersey-seo-agency-nj-appear-on-google-click.png',
+                'card1_title' => 'Appear on Google without paying per click',
+                'card1_highlight' => 'paying per click',
+                'card2_image' => 'https://digitalmarketingnewjersey.us/images/digital-marketing-new-jersey-seo-agency-nj-generta-traffic-leads-every-day-naturally.png',
+                'card2_title' => 'Generate traffic and leads every day naturally',
+                'card2_highlight' => 'leads every day naturally',
+                'card3_image' => 'https://digitalmarketingnewjersey.us/images/digital-marketing-new-jersey-seo-agency-nj-gain-real-long-term-visibility.png',
+                'card3_title' => 'Gain real, long-term visibility',
+                'card3_highlight' => 'long-term visibility',
+
                 'is_active' => true,
             ],
             [

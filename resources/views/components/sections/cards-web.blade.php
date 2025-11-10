@@ -1,5 +1,6 @@
 @props(['page'])
 
+@if(!empty($page->cards_title))
 <div class="cards-web">
     <div class="container py-0">
 
@@ -56,3 +57,4 @@
         </div>
     </div>
 </div>
+@endif

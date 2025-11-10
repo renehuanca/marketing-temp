@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ServicePageController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,3 +23,5 @@ Route::get('service-pages/{servicePage}/edit', [ServicePageController::class, 'e
 
 Route::put('service-pages/{servicePage}', [ServicePageController::class, 'update'])
     ->name('service-pages.update');
+
+Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
